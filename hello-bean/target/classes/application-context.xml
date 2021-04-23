@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- 기본 namespace는 beans이다. -->
+	<!-- scope="prototype"으로 지정 시, getBean 요청마다 빈 객체를 생성 -->
+	<!-- 	
+	<bean id="lgTv" class="com.kh.spring.tv.model.vo.LgTv" scope="singleton"/>
+	<bean id="samsungTv" class="com.kh.spring.tv.model.vo.SamsungTv" lazy-init="true"/>
+	<bean id="remocon" class="com.kh.spring.tv.model.vo.RemoteControl"/>
+	 -->
+	<!-- com.kh.spring이하의 빈 객체를 등록 처리. @Autowired, @Controller, @Service등.. -->
+	<context:component-scan base-package="com.kh.spring"></context:component-scan>
+</beans>

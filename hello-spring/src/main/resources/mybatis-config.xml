@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+		<!-- member_name의 경우 자동으로 자바 vo의 memberName으로 변환해줌 -->
+		<setting name="mapUnderscoreToCamelCase" value="true"/>   
+		<!-- java쪽에서 데이터가 null이라면 jdbc에서도 null로 처리하겠다고 설정 -->
+		<setting name="jdbcTypeForNull" value="NULL"/>
+    </settings>
+	<typeAliases>
+		<typeAlias type="com.kh.spring.demo.model.vo.Dev" alias="dev"/>
+		<!-- 이하 패키지의 모든 클래스를 소문자로 변환하여 별칭으로 등록 -->
+		<package name="com.kh.spring"/>
+		<!-- <typeAlias type="com.kh.spring.member.model.vo.Member" alias="model"/> -->
+	</typeAliases>
+
+
+	<typeHandlers>
+		<typeHandler handler="com.kh.spring.common.typehandler.StringArrayTypeHandler"/>
+	</typeHandlers>
+</configuration>
