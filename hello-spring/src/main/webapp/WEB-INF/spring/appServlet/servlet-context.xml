@@ -39,8 +39,10 @@
 		</interceptor>
 		<interceptor>
 			<mapping path="/member/**/*.do"/>
+			<mapping path="/board/**/*.do"/>
 			<exclude-mapping path="/member/login.do"/>
 			<exclude-mapping path="/member/memberEnroll.do"/>
+			<exclude-mapping path="/board/boardList.do"/>
 			<beans:bean id="loginInterceptor" class="com.kh.spring.common.interceptor.LoginInterceptor"/>		
 		</interceptor>
 	</interceptors>

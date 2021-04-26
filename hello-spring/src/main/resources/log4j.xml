@@ -19,6 +19,14 @@
 		</layout>
 	</appender>
 	
+	<appender name="loginLogger" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="${catalina.base}/logs/hello-spring/logins/login-logger.log"/>
+		<param name="append" value="true"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss}] %-5p: %m%n"/>
+		</layout>
+	</appender>
+	
 <!--
 	* %c : 카테고리명(logger이름)을 표시
 	* 카테고리명이 hello.world.logger일때, %c{2}는 world.logger를 출력
@@ -65,6 +73,11 @@
 	<!-- Application Loggers -->
 	<logger name="com.kh.spring">
 		<level value="debug" />
+	</logger>
+	
+	<logger name="com.kh.spring.common.aop" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="loginLogger"/>
 	</logger>
 	
 	<!-- 3rdparty Loggers -->

@@ -16,9 +16,9 @@ import lombok.extern.slf4j.Slf4j;
 public class TimeAspect {
 	
 	@Pointcut("execution(* com.kh.spring.memo.controller.MemoController.insertMemo(..))")
-	public void TimePointcut() {}
+	public void timePointcut() {}
 	
-	@Around("TimePointcut()")
+	@Around("timePointcut()")
     public Object aroundAdvice(ProceedingJoinPoint joinpoint) throws Throwable{
         String methodName = joinpoint.getSignature().getName();
         log.debug("메소드 이름 출력 테스트 {}", methodName);
