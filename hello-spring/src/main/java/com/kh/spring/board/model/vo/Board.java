@@ -18,7 +18,6 @@ public class Board {
 	private String content;
 	private Date regDate;
 	private int readCount;
-	
 	private int attachCount; //첨부파일 개수
 	private List<Attachment> attachList;
 }

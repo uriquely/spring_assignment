@@ -30,7 +30,7 @@ public class StringArrayTypeHandler extends BaseTypeHandler<String[]> {
 			throws SQLException {
 		// {"java", "C", "Javascript"} ----> "Java,C,Javascript" 이런식으로 바꾸어서 대입
 		String x = String.join(",", parameter);
-		ps.setString(i, x);;
+		ps.setString(i, x);
 	}
 
 	@Override

@@ -13,4 +13,5 @@ public interface BoardService {
 
 	int insertBoard(Board board);
 
+	Board boardDetail(int no);
 }
